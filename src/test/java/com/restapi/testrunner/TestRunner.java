@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 
 @CucumberOptions(  monochrome = true,
-                         tags = "@places03",
+                         tags = "@places",
                      features = "src/test/resources/features/",
                        plugin = { "pretty","html:target/cucumber-reports"},
                        dryRun = false,

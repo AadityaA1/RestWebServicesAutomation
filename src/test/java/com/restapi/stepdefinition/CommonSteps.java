@@ -187,15 +187,15 @@ public class CommonSteps extends BaseTest {
 		testContext.response = testContext.requestSpecs.when().get(resourceURL);
 	}
 
-	@And("I save the values from response as below")
-	public void saveBodyValues(Map<String, String> fields) throws JsonMappingException, JsonProcessingException {
+	@And("I save below values from response")
+	public void saveBodyValues(List<String> fields) throws JsonMappingException, JsonProcessingException {
 		String bodyStringValue = testContext.response.getBody().asString();
 		ObjectMapper mapper = new ObjectMapper();
 		String value = "";
 		String varName = "";
 		JsonNode rootNode = mapper.readTree(bodyStringValue);
-		for (String key : fields.keySet()) {
-			varName = fields.get(key);
+		for (String key : fields) {
+			varName = key;
 			value = rootNode.findValue(key).toString();
 			testContext.getScenarioContext().setContext(varName, value);
 		}

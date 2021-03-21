@@ -14,8 +14,8 @@ Feature: Places
       | lng | -33.1234 |
     When I perform POST operation "postPlaces"
     Then I verify status code is 200
-    And I save the values from response as below
-      | place_id | place_id |
+    And I save below values from response
+      | place_id |
     And I verify response body has below value pairs
       | scope | APP |
 
@@ -32,8 +32,8 @@ Feature: Places
       | lng | -33.1234 |
     When I perform POST operation "postPlaces"
     Then I verify status code is 200
-    And I save the values from response as below
-      | place_id | place_id |
+    And I save below values from response
+      | place_id |
     And I verify response body has below value pairs
       | scope | APP |
     ###Delete Place####
@@ -61,8 +61,8 @@ Feature: Places
       | lng | -33.1234 |
     When I perform POST operation "postPlaces"
     Then I verify status code is 200
-    And I save the values from response as below
-      | place_id | place_id |
+    And I save below values from response
+      | place_id |
     And I verify response body has below value pairs
       | scope | APP |
    
